@@ -63,5 +63,5 @@ Prerequisites for this work
 - Pull existing repo to your enviroment
   ```
   git init
-  git remote add origin git@github.com:blakeaber/resilient-devops.git
+  git clone git@github.com:blakeaber/resilient-devops.git
   ```
