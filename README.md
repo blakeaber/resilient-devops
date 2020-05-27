@@ -22,9 +22,9 @@ Prerequisites for this work
 
 ## Enviromental Setup on Local System(Linux)
 - Install the follow packages in an ubuntu 18.04 box
-  ```sudo apt update```
-  ```sudo apt upgrade -y```
-  ```sudo apt install snap```
-  ```sudo snap install docker```
-  ```sudo snap install git-ubuntu --classic```
+  --> ```sudo apt update```
+  --> ```sudo apt upgrade -y```
+  --> ```sudo apt install snap```
+  --> ```sudo snap install docker```
+  --> ```sudo snap install git-ubuntu --classic```
   ``````
