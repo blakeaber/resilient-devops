@@ -27,6 +27,9 @@ Prerequisites for this work
   sudo apt upgrade -y
   sudo apt install snap
   sudo snap install docker
+  sudo groupadd docker
+  sudo usermod -aG docker $USER
+  newgrp docker
   sudo snap install git-ubuntu --classic
   sudo snap install terraform  
   sudo snap install aws-cli --classic
