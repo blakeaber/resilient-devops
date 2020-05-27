@@ -23,28 +23,24 @@ Prerequisites for this work
 ## Enviromental Setup on Local System(Linux)
 - Install the follow packages in an ubuntu 18.04 box
   ```
-  
   # System update, and tools installations
   sudo apt update
-  sudo apt upgrade -y
-  sudo apt install snap
-  sudo snap install terraform  
-  sudo snap install aws-cli --classic
   
-  # Local docker installation
-  sudo snap install docker
-  sudo groupadd docker
-  sudo usermod -aG docker $USER
-  newgrp docker
-  sudo apt install build-essential zlib1g-dev libssl-dev libncurses-dev libffi-dev libsqlite3-dev libreadline-dev libbz2-dev -y
+  sudo apt upgrade -y
+  
+  sudo apt install snap
   
   sudo snap install git-ubuntu --classic
   
-  # If this enviroment is shared with other usecases please consder using virtualenv
-  git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git
-  ./aws-elastic-beanstalk-cli-setup/scripts/bundled_installer
-  # Substitute this with equivalent of your workspace
-  echo 'export PATH="/home/vagrant/.ebcli-virtual-env/executables:$PATH"' >> ~/.bash_profile && source ~/.bash_profile
+  
+  # System update, and tools installations
+  sudo apt update
+  
+  sudo apt upgrade -y
+  
+  sudo apt install snap
+  
+  sudo snap install git-ubuntu --classic
   
   #Git configuraton
   git config --global user.name "<Your first and last name>"
@@ -53,8 +49,10 @@ Prerequisites for this work
 - Generate ssh keys to authenticate to github
   ```
   ssh-keygen -t rsa -C "<your email>"
+  
   #Copy the output of this command
   cat ~/.ssh/<"Name of the Key create".pub> #example is_rsa.pub
+  
   ```
   Add this to your github account and test if this works.
   - https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
@@ -63,5 +61,7 @@ Prerequisites for this work
 - Pull existing repo to your enviroment
   ```
   git init
+  
   git clone git@github.com:blakeaber/resilient-devops.git
+  
   ```
