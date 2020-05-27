@@ -33,15 +33,6 @@ Prerequisites for this work
   sudo snap install git-ubuntu --classic
   
   
-  # System update, and tools installations
-  sudo apt update
-  
-  sudo apt upgrade -y
-  
-  sudo apt install snap
-  
-  sudo snap install git-ubuntu --classic
-  
   #Git configuraton
   git config --global user.name "<Your first and last name>"
   git config --global user.email "<your email>"
