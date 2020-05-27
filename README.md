@@ -27,4 +27,3 @@ Prerequisites for this work
   sudo apt install snap
   sudo snap install docker
   sudo snap install git-ubuntu --classic```
-  ``````
