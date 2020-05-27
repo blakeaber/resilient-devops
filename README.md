@@ -18,3 +18,13 @@ App requires webcam access:
 Prerequisites for this work
 - I will provide a functioning, dockerized app (can also be run locally) where webcam access works correctly on localhost (Chrome only allows localhost and https)
 - I will be available to troubleshoot any issues with you (I am a back-end engineer w/ novice AWS experience)
+
+
+## Enviromental Setup on Local System(Linux)
+- Install the follow packages in an ubuntu 18.04 box
+  ```sudo apt update```
+  ```sudo apt upgrade -y```
+  ```sudo apt install snap```
+  ```sudo snap install docker```
+  ```sudo snap install git-ubuntu --classic```
+  ``````
