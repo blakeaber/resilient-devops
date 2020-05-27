@@ -24,7 +24,7 @@ Prerequisites for this work
 - Install the follow packages in an ubuntu 18.04 box
   ```
   
-  #System update, and tools installations
+  # System update, and tools installations
   sudo apt update
   sudo apt upgrade -y
   sudo apt install snap
