@@ -49,15 +49,6 @@ package_installs() {
   sudo snap install docker;
   check_exit_status
 
-  sudo groupadd docker;
-  check_exit_status
-
-  sudo usermod -aG docker $USER;
-  check_exit_status
-
-  newgrp docker;
-  check_exit_status
-
   sudo apt install build-essential zlib1g-dev libssl-dev libncurses-dev libffi-dev libsqlite3-dev libreadline-dev libbz2-dev -y;
   check_exit_status
 
