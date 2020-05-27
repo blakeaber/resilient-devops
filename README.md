@@ -30,16 +30,15 @@ Prerequisites for this work
   sudo groupadd docker
   sudo usermod -aG docker $USER
   newgrp docker
+  sudo apt install build-essential zlib1g-dev libssl-dev libncurses-dev libffi-dev libsqlite3-dev libreadline-dev libbz2-dev -y
   sudo snap install git-ubuntu --classic
+  git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git
+  ./aws-elastic-beanstalk-cli-setup/scripts/bundled_installer
   sudo snap install terraform  
   sudo snap install aws-cli --classic
   sudo apt-get install python3.7 -y
   sudo apt install python3-pip -y 
-  curl -O https://bootstrap.pypa.io/get-pip.py
-  python3 get-pip.py --user
-  echo "export PATH=/home/vagrant/.local/lib/python3.6/site-packages/pip:$PATH" >> ~/.bashrc
-  source ~/.bashrc
-  pip install awsebcli --upgrade --user
+  pip3 install awsebcli --upgrade --user
   git config --global user.name "<Your first and last name>"
   git config --global user.email "<your email>"
   ```
