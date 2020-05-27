@@ -28,4 +28,22 @@ Prerequisites for this work
   sudo apt install snap
   sudo snap install docker
   sudo snap install git-ubuntu --classic
+  sudo snap install terraform  
+  git config --global user.name "<Your first and last name>"
+  git config --global user.email "<your email>"
+  ```
+- Generate ssh keys to authenticate to github
+  ```
+  ssh-keygen -t rsa -C "<your email>"
+  #Copy the output of this command
+  cat ~/.ssh/<"Name of the Key create".pub>
+  ```
+  Add this to your github account and test if this works.
+  - https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
+ 
+## Getting this Repo Cloned to you system.
+- Pull existing repo to your enviroment
+  ```
+  git init
+  git remote add origin git@github.com:blakeaber/resilient-devops.git
   ```
