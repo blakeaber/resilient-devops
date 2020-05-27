@@ -52,4 +52,4 @@ aws --version
 
 ```
 
---> Now you should be ready to start your aws , terraform, docker operations
+--> Now you should be ready to start your aws , terraform, docker operations. This is done for you but do it for the peace of mind
