@@ -29,6 +29,14 @@ Prerequisites for this work
   sudo snap install docker
   sudo snap install git-ubuntu --classic
   sudo snap install terraform  
+  sudo snap install aws-cli --classic
+  sudo apt-get install python3.7 -y
+  sudo apt install python3-pip -y 
+  curl -O https://bootstrap.pypa.io/get-pip.py
+  python3 get-pip.py --user
+  echo "export PATH=/home/vagrant/.local/lib/python3.6/site-packages/pip:$PATH" >> ~/.bashrc
+  source ~/.bashrc
+  pip install awsebcli --upgrade --user
   git config --global user.name "<Your first and last name>"
   git config --global user.email "<your email>"
   ```
