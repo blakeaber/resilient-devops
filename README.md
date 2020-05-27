@@ -56,3 +56,8 @@ Prerequisites for this work
   git clone git@github.com:blakeaber/resilient-devops.git
   
   ```
+
+## Follow instructions on resilient-devops/script/README.md
+```
+  cd resilient-devops/script/
+```
