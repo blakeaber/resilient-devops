@@ -51,6 +51,10 @@ Prerequisites for this work
 ## Getting this Repo Cloned to you system.
 - Pull existing repo to your enviroment
   ```
+  mkdir <dir to hold repo locally>
+  
+  cd <dir created above>
+  
   git init
   
   git clone git@github.com:blakeaber/resilient-devops.git
