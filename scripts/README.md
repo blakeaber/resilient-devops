@@ -53,3 +53,5 @@ aws --version
 ```
 
 --> Now you should be ready to start your aws , terraform, docker operations. This is done for you but do it for the peace of mind
+
+--> Proceed to resilient-devops/tfs/docker_eb/README.md
