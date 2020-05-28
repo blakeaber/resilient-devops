@@ -1,4 +1,4 @@
-# AWS Elastic Beanstalk + Docker Deploy Setup
+# AWS Elastic Beanstalk with Docker Deploy Setup
 
 Purpose of this repo is to document and simplify deployment & setup process of Docker-based applications on AWS Elastic Beanstalk.
 
@@ -31,7 +31,7 @@ terraform destroy
 ```
 For example:
 ```
-./deploy.sh my-app-name staging us-east-1 f0478bd7c2f584b41a49405c91a439ce9d944657
+./deploy.sh resilient-ai staging us-east-1 f0478bd7c2f584b41a49405c91a439ce9d944657
 ```
 
 If you don't have your AWS credentials set as ENV variables:
@@ -44,4 +44,3 @@ AWS_SECRET_ACCESS_KEY=XXXxmxxXlxxbA3vgOxxxxCk+uXXXXOrdmpC/oXxx \
 
 ### Automatic deployment
 Edit your `circle.yml` file to invoke `deploy.sh` script in `post.test` or `deploy` hook. Don't forget to fill out ENV variables in CircleCI setup.
-
