@@ -20,14 +20,16 @@ If you don't have your AWS credentials set as ENV variables:
 ### Contents of repo
  - ```Dockerrun.aws.json``` - AWS Beanstalk standard task definition. Tells Beanstalk which image from ECR it should use
  - ```deploy.sh``` - script for deploying applications. App must be first set up
+ - ```Dockerfile``` - You will use to build your image
  - ```*.tf``` files - Terraform infrastructure definition written in HCL (HashiCorp Configuration Language)
  - ```clean.sh``` - script for cleaning temporary files
 
 ### Setup
-1. Run ```terraform plan -out plan.tfplan```
+1. Run ```terraform init```
+2. Run ```terraform plan -out plan.tfplan```
   - Fill out Name, Description & environment
   - Profile is name of your profile inside `~/.aws/credentials` file (Standard AWS way). Default profile is called `default`. You can insert many profiles inside `credentials` file.
-2. Run ```terraform apply plan.tfplan``` - this may take up to 15 minutes
+3. Run ```terraform apply plan.tfplan``` - this may take up to 15 minutes
 
 Alternatively you can place variables inside `terraform.tfvars` file instead of pasting them into CLI input.
 
