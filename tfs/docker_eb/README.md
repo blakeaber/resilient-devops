@@ -4,6 +4,7 @@ Purpose of this repo is to document and simplify deployment & setup process of D
 
 ### Prerequisities
 - AWS IAM Role with access to IAM, EC2, ACM, ROUTE 53, Beanstalk & Elastic Container Registry/Engine and it's access & secret keys. Profile must be set inside `~/.aws/credentials` directory.
+- In docker-compose.yml provide the image, and placeholder env to be passed to container
 - Terraform
 
 ### Contents of repo
