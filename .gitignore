@@ -1,4 +1,8 @@
 .terraform/
 *.out
 *.plan
-
+*.zip
+*=
+*.backup
+*.tfstate
+*.tfplan
