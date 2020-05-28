@@ -19,7 +19,7 @@ variable "region" {
   description = "Defines where your app should be deployed"
 }
 
-variable "region2" {
-  default     = "eu-west-2"
-  description = "Defines where your app should be deployed"
-}
+# variable "region2" {
+#   default     = "eu-west-2"
+#   description = "Defines where your app should be deployed"
+# }
