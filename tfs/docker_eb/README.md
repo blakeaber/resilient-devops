@@ -11,9 +11,9 @@ If you don't have your AWS credentials set as ENV variables:
 ```
  $ export AWS_ACCOUNT_ID=XX677677XXXX 
 
- $ AWS_ACCESS_KEY_ID=AKIAIXEXIX5JW5XM6XXX 
+ $ export AWS_ACCESS_KEY_ID=AKIAIXEXIX5JW5XM6XXX 
 
- $ AWS_SECRET_ACCESS_KEY=XXXxmxxXlxxbA3vgOxxxxCk+uXXXXOrdmpC/oXxx
+ $ export AWS_SECRET_ACCESS_KEY=XXXxmxxXlxxbA3vgOxxxxCk+uXXXXOrdmpC/oXxx
 
 ```
 
