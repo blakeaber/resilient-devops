@@ -75,7 +75,7 @@ aws configure set default.region $REGION
 aws configure set default.output json
 
 # Login to AWS Elastic Container Registry
-eval $(aws ecr get-login)
+eval $(aws ecr get-login --profile default | awk '{ print "sudo", $1, $2, $3, $4, $5, $6, $9}')
 
 # Build the image
 docker build -t $NAME:$VERSION .
