@@ -7,6 +7,16 @@ Purpose of this repo is to document and simplify deployment & setup process of D
 - In docker-compose.yml provide the image, and placeholder env to be passed to container
 - Terraform
 
+If you don't have your AWS credentials set as ENV variables:
+```
+ $ export AWS_ACCOUNT_ID=XX677677XXXX 
+
+ $ AWS_ACCESS_KEY_ID=AKIAIXEXIX5JW5XM6XXX 
+
+ $ AWS_SECRET_ACCESS_KEY=XXXxmxxXlxxbA3vgOxxxxCk+uXXXXOrdmpC/oXxx
+
+```
+
 ### Contents of repo
  - ```Dockerrun.aws.json``` - AWS Beanstalk standard task definition. Tells Beanstalk which image from ECR it should use
  - ```deploy.sh``` - script for deploying applications. App must be first set up
@@ -34,12 +44,8 @@ For example:
 ```
 ./deploy.sh resilient-ai staging us-east-1 f0478bd7c2f584b41a49405c91a439ce9d944657
 ```
-
-If you don't have your AWS credentials set as ENV variables:
+Now let us Deploy...
 ```
-AWS_ACCOUNT_ID=XX677677XXXX \
-AWS_ACCESS_KEY_ID=AKIAIXEXIX5JW5XM6XXX \
-AWS_SECRET_ACCESS_KEY=XXXxmxxXlxxbA3vgOxxxxCk+uXXXXOrdmpC/oXxx \
 ./deploy.sh my-app-name staging us-east-1 f0478bd7c2f584b41a49405c91a439ce9d944657
 ```
 
