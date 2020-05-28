@@ -54,6 +54,19 @@ eb --version
 
 ```
 
+## Issues you mya run into
+# Docker permissions
+Some times the script does not correctly add docker user to sudo group. If that is the issue kindly do the following.
+```
+    $ sudo groupadd docker
+    
+    $ sudo usermod -aG docker $USER
+
+    $ newgrp docker 
+
+    $ docker run hello-world # Test if user was added to sudo group
+```
+
 --> Now you should be ready to start your aws , terraform, docker operations. 
 
 --> Proceed to resilient-devops/tfs/docker_eb/README.md
