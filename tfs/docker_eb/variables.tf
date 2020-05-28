@@ -18,3 +18,8 @@ variable "region" {
   default     = "us-east-1"
   description = "Defines where your app should be deployed"
 }
+
+variable "region2" {
+  default     = "us-west-2"
+  description = "Defines where your app should be deployed"
+}
