@@ -19,7 +19,22 @@ variable "region" {
   description = "Defines where your app should be deployed"
 }
 
-# variable "region2" {
-#   default     = "eu-west-2"
-#   description = "Defines where your app should be deployed"
-# }
+variable "rds_endpoint" {
+  default     = ""
+  description = "rds string for your db"
+}
+
+variable "rds_user" {
+  default     = ""
+  description = "rds user for your db"
+}
+
+variable "rds_password" {
+  default     = ""
+  description = "rds password for your db"
+}
+
+variable "rds_port" {
+  default     = "5432"
+  description = "rds port for your db"
+}
