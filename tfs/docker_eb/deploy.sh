@@ -64,7 +64,7 @@ if [ -z "$AWS_SECRET_ACCESS_KEY" ]; then
   exit 1
 fi
 
-EB_BUCKET=$NAME-deployments
+EB_BUCKET=$NAME-deployments-resilient-ai
 ENV=$NAME-$STAGE
 VERSION=$STAGE-$SHA1-$(date +%s)
 ZIP=$VERSION.zip
