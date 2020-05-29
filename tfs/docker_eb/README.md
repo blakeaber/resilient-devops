@@ -28,7 +28,7 @@ If you don't have your AWS credentials set as ENV variables:
  - ```clean.sh``` - script for cleaning temporary files
 
 ### Setup
-1. In the variables.tf file, set configs for DB and other things as you see fit
+1. In the variables.tf file, set configs variable with default atribute to your liking! Leave the ones without the default attribute as is, for it is intended that way by design
 2. Run ```terraform init```
 3. Run ```terraform plan -out plan.tfplan```
   - Fill out Name, Description & environment
