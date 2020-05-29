@@ -144,6 +144,13 @@ resource "aws_elastic_beanstalk_environment" "ng_beanstalk_application_environme
     value = "${var.rds_password}"
   }
   
+  setting {
+    namespace = "aws:autoscaling:asg"
+    name      = "Availability Zones"
+
+    value = "Any"
+  }
+  
 }
 
 # Create a new application load balancer
