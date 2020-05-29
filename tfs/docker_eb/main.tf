@@ -150,6 +150,7 @@ resource "aws_elastic_beanstalk_environment" "ng_beanstalk_application_environme
 resource "aws_elb" "alb" {
     name               = "${var.elb_alb}"
     #availability_zones = ["us-west-2a", "us-west-2b", "us-west-2c"]
+    enable_http2       = true
 
     listener {
       instance_port     = "${var.instance_port}"
@@ -170,7 +171,7 @@ resource "aws_elb" "alb" {
       healthy_threshold   = 2
       unhealthy_threshold = 2
       timeout             = 3
-      target              = "HTTP:8000/"
+      target              = "HTTP:${var.instance_port}/"
       interval            = 30
     }
 
