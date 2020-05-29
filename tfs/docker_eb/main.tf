@@ -113,4 +113,34 @@ resource "aws_elastic_beanstalk_environment" "ng_beanstalk_application_environme
     name      = "IamInstanceProfile"
     value     = "${aws_iam_instance_profile.ng_beanstalk_ec2.name}"
   }
+  
+  # For rds information in the near future a use of AWS SDK to call them from application layer will reduce attack vector
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "RDS_ENDPOINT"
+
+    value = "${var.rds_endpoint}"
+  }
+  
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "RDS_USER"
+
+    value = "${var.rds_user}"
+  }
+  
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "RDS_PORT"
+
+    value = "${var.rds_port}"
+  }
+  
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "RDS_USER"
+
+    value = "${var.rds_password}"
+  }
+  
 }
