@@ -64,11 +64,13 @@ package_installs() {
   check_exit_status
   
   #Install ecr helper
-  git clone git@github.com:awslabs/amazon-ecr-credential-helper.git
-  cd amazon-ecr-credential-helper/
-  make docker
-  cd ..
+  wget https://github.com/docker/docker-credential-helpers/releases/download/v0.6.0/docker-credential-pass-v0.6.0-amd64.tar.gz 
+  tar -xf docker-credential-pass-v0.6.0-amd64.tar.gz
+  chmod +x docker-credential-pass
+  sudo mv docker-credential-pass /usr/local/bin/
   check_exit_status
+  
+  
 }
 
 housekeeping() {
