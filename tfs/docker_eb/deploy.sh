@@ -77,6 +77,10 @@ aws configure set default.output json
 # Login to AWS Elastic Container Registry
 eval $(aws ecr get-login --profile default | awk '{ print "sudo", $1, $2, $3, $4, $5, $6, $9}')
 
+# Pull Imgae to prevent error form current ecr version
+IMAGE=$(cat Dockerfile | awk '{ print $2}')
+docker pull $IMAGE
+
 # Build the image
 docker build -t $NAME:$VERSION .
 # Tag it
