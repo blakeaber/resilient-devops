@@ -54,6 +54,7 @@ resource "aws_iam_role_policy" "ng_beanstalk_ec2_policy" {
     {
       "Action": [
         "cloudwatch:PutMetricData",
+        "elasticbeanstalk:*",
         "ds:CreateComputer",
         "ds:DescribeDirectories",
         "ec2:DescribeInstanceStatus",
