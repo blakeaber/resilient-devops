@@ -59,7 +59,7 @@ variable "instance_port" {
   description = "application load balancer name listener for instance_port"
  }
 
-variable "ssl_certificate_id" {
+variable "ssl_certificate_arn" {
   default     = "arn:aws:acm:us-east-1:162471567408:certificate/2da003ea-fb75-4148-9174-cd2daf9f369c"
   description = "ssl arn to make alb https, critical for app functioning"
  }
