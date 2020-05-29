@@ -18,7 +18,7 @@ resource "aws_ecr_repository" "ng_container_repository" {
 # Beanstalk instance profile
 resource "aws_iam_instance_profile" "ng_beanstalk_ec2" {
   name  = "ng-beanstalk-ec2-user"
-  roles = ["${aws_iam_role.ng_beanstalk_ec2.name}"]
+  role = "${aws_iam_role.ng_beanstalk_ec2.name}"
 }
 
 resource "aws_iam_role" "ng_beanstalk_ec2" {
