@@ -62,6 +62,13 @@ package_installs() {
   # Substitute this with equivalent of your workspace
   echo 'export PATH="/home/$USER/.ebcli-virtual-env/executables:$PATH"' >> ~/.bash_profile && source ~/.bash_profile;
   check_exit_status
+  
+  #Install ecr helper
+  git clone git@github.com:awslabs/amazon-ecr-credential-helper.git
+  cd amazon-ecr-credential-helper/
+  make docker
+  cd ..
+  check_exit_status
 }
 
 housekeeping() {
