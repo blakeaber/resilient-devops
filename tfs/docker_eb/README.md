@@ -38,17 +38,17 @@ Alternatively you can place variables inside `terraform.tfvars` file instead of 
 terraform destroy
 ```
 
-### Manual deployment
+### Manual deployment (i.e $(git show -s --format=%H) is how you get the git commit-sha)
 ```
 ./deploy.sh <appname> <environment> <region> <commit_sha>
 ```
 For example:
 ```
-./deploy.sh resilient-ai staging us-east-1 f0478bd7c2f584b41a49405c91a439ce9d944657
+./deploy.sh resilient-ai staging us-east-1 $(git show -s --format=%H)
 ```
 Now let us Deploy...
 ```
-./deploy.sh my-app-name staging us-east-1 f0478bd7c2f584b41a49405c91a439ce9d944657
+./deploy.sh my-app-name staging us-east-1 $(git show -s --format=%H)
 ```
 
 ### Automatic deployment
