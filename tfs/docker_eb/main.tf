@@ -61,7 +61,7 @@ resource "aws_iam_role_policy" "ng_beanstalk_ec2_policy" {
         "logs:*",
         "ssm:*",
         "xray:*",
-        "sqs:*"
+        "sqs:*",
         "ec2messages:*",
         "ecr:*",
         "dynamodb:*",
