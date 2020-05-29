@@ -179,6 +179,41 @@ resource "aws_elastic_beanstalk_environment" "ng_beanstalk_application_environme
     value = "application"
   }
   
+  setting {
+    namespace = "aws:elasticbeanstalk:environment:process:default"
+    name      = "Port"
+
+    value = "80"
+  }
+  
+  setting {
+    namespace = "aws:elasticbeanstalk:environment:process:default"
+    name      = "Protocol"
+
+    value = "HTTP"
+  }
+  
+  setting {
+    namespace = "aws:elbv2:listener:443"
+    name      = "Protocol"
+
+    value = "HTTPS"
+  }
+  
+  setting {
+    namespace = "aws:elbv2:listener:default"
+    name      = "Protocol"
+
+    value = "HTTP"
+  }
+  
+  setting {
+    namespace = "aws:elasticbeanstalk:environment:proxy"
+    name      = "ProxyServer"
+
+    value = "nginx"
+  }
+  
 }
 
 # Create a new application load balancer
