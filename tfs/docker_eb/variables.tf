@@ -38,3 +38,13 @@ variable "rds_port" {
   default     = "5432"
   description = "rds port for your db"
 }
+
+variable "auto_scalling_max_size" {
+  default     = "2"
+  description = "auto scalling max size or capacity for asg"
+}
+
+variable "instance_type" {
+  default     = "t2.micro"
+  description = "ec2 instance type for docker host"
+}
