@@ -247,7 +247,7 @@ resource "aws_route53_record" "www" {
   }
 }
 
-resource "aws_route53_record" "www" {
+resource "aws_route53_record" "none_www" {
   zone_id = "${aws_route53_zone.primary.zone_id}"
   name    = "${var.site}"
   type    = "A"
