@@ -48,4 +48,8 @@ variable "instance_type" {
 
 variable "ssl_certificate_arn" {
   description = "ssl arn to make alb https, critical for app functioning"
- }
+}
+
+variable "site" {
+  description = "your domain name to associate with this deployment"
+}
