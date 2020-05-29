@@ -151,6 +151,13 @@ resource "aws_elastic_beanstalk_environment" "ng_beanstalk_application_environme
     value = "Any"
   }
   
+  setting {
+    namespace = "aws:elasticbeanstalk:environment"
+    name      = "EnvironmentType"
+
+    value = "LoadBalanced"
+  }
+  
 }
 
 # Create a new application load balancer
