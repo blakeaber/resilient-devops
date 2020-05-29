@@ -66,6 +66,12 @@ resource "aws_iam_role_policy" "ng_beanstalk_ec2_policy" {
         "ecr:*",
         "dynamodb:*",
         "ecs:*",
+        "iam:*",
+        "rds:*",
+        "sns:*",
+        "autoscaling:*",
+        "elasticloadbalancing:*",
+        "codebuild:*",
         "s3:*"
       ],
       "Effect": "Allow",
