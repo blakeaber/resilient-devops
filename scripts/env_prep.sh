@@ -70,6 +70,9 @@ package_installs() {
   sudo mv docker-credential-pass /usr/local/bin/
   check_exit_status
   
+  # Install zip
+  sudo apt-get install zip -y
+  check_exit_status
   
 }
 
