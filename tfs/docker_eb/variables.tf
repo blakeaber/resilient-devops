@@ -48,3 +48,18 @@ variable "instance_type" {
   default     = "t2.micro"
   description = "ec2 instance type for docker host"
 }
+
+variable "elb_alb" {
+  default     = "resilient"
+  description = "application load balancer name"
+}
+
+variable "instance_port" {
+  default     = 5000
+  description = "application load balancer name listener for instance_port"
+ }
+
+variable "ssl_certificate_id" {
+  default     = "arn:aws:acm:us-east-1:162471567408:certificate/2da003ea-fb75-4148-9174-cd2daf9f369c"
+  description = "ssl arn to make alb https, critical for app functioning"
+ }
