@@ -4,8 +4,11 @@ Purpose of this repo is to document and simplify deployment & setup process of D
 
 ### Prerequisities
 - AWS IAM Role with access to IAM, EC2, ACM, ROUTE 53, Beanstalk & Elastic Container Registry/Engine and it's access & secret keys. Profile must be set inside `~/.aws/credentials` directory.
-- In docker-compose.yml provide the image, and placeholder env to be passed to container
 - Terraform
+- Docker
+- ACM ```ARN``` for certificate
+- RDS DB connection string, user, password and port
+- route53 https certified website domain with the cert above 
 
 If you don't have your AWS credentials set as ENV variables:
 ```
@@ -20,16 +23,17 @@ If you don't have your AWS credentials set as ENV variables:
 ### Contents of repo
  - ```Dockerrun.aws.json``` - AWS Beanstalk standard task definition. Tells Beanstalk which image from ECR it should use
  - ```deploy.sh``` - script for deploying applications. App must be first set up
- - ```Dockerfile``` - You will use to build your image
+ - ```Dockerfile``` - You will use to build your image, please change this to your need (make sure the FROM part is always the first line of the script)
  - ```*.tf``` files - Terraform infrastructure definition written in HCL (HashiCorp Configuration Language)
  - ```clean.sh``` - script for cleaning temporary files
 
 ### Setup
-1. Run ```terraform init```
-2. Run ```terraform plan -out plan.tfplan```
+1. In the variables.tf file, set configs for DB and other things as you see fit
+2. Run ```terraform init```
+3. Run ```terraform plan -out plan.tfplan```
   - Fill out Name, Description & environment
   - Profile is name of your profile inside `~/.aws/credentials` file (Standard AWS way). Default profile is called `default`. You can insert many profiles inside `credentials` file.
-3. Run ```terraform apply plan.tfplan``` - this may take up to 15 minutes
+4. Run ```terraform apply plan.tfplan``` - this may take up to 15 minutes
 
 Alternatively you can place variables inside `terraform.tfvars` file instead of pasting them into CLI input.
 
