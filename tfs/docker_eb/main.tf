@@ -221,44 +221,51 @@ resource "aws_elastic_beanstalk_environment" "ng_beanstalk_application_environme
     value = "true"
   }
   
+  setting {
+    namespace = "aws:elbv2:listener:443"
+    name      = "SSLCertificateArns"
+
+    value = "${var.ssl_certificate_arn}"
+  }
+  
 }
 
-# Create a new application load balancer
-resource "aws_elb" "alb" {
-    name               = "${var.elb_alb}"
-    #availability_zones = ["us-west-2a", "us-west-2b", "us-west-2c"]
-    enable_http2       = true
+# # Create a new application load balancer
+# resource "aws_elb" "alb" {
+#     name               = "${var.elb_alb}"
+#     #availability_zones = ["us-west-2a", "us-west-2b", "us-west-2c"]
+#     enable_http2       = true
 
-    listener {
-      instance_port     = "${var.instance_port}"
-      instance_protocol = "http"
-      lb_port           = 80
-      lb_protocol       = "http"
-    }
+#     listener {
+#       instance_port     = "${var.instance_port}"
+#       instance_protocol = "http"
+#       lb_port           = 80
+#       lb_protocol       = "http"
+#     }
 
-    listener {
-      instance_port      = "${var.instance_port}"
-      instance_protocol  = "http"
-      lb_port            = 443
-      lb_protocol        = "https"
-      ssl_certificate_id = "${var.ssl_certificate_id}"
-    }
+#     listener {
+#       instance_port      = "${var.instance_port}"
+#       instance_protocol  = "http"
+#       lb_port            = 443
+#       lb_protocol        = "https"
+#       ssl_certificate_id = "${var.ssl_certificate_id}"
+#     }
 
-    health_check {
-      healthy_threshold   = 2
-      unhealthy_threshold = 2
-      timeout             = 3
-      target              = "HTTP:${var.instance_port}/"
-      interval            = 30
-    }
+#     health_check {
+#       healthy_threshold   = 2
+#       unhealthy_threshold = 2
+#       timeout             = 3
+#       target              = "HTTP:${var.instance_port}/"
+#       interval            = 30
+#     }
 
-    # instances                   = ["${aws_instance.foo.id}"]
-    cross_zone_load_balancing   = true
-    idle_timeout                = 400
-    connection_draining         = true
-    connection_draining_timeout = 400
+#     # instances                   = ["${aws_instance.foo.id}"]
+#     cross_zone_load_balancing   = true
+#     idle_timeout                = 400
+#     connection_draining         = true
+#     connection_draining_timeout = 400
 
-    tags = {
-      Name = "resillient-terraform-elb-alb"
-    }
-  }
+#     tags = {
+#       Name = "resillient-terraform-elb-alb"
+#     }
+#   }
