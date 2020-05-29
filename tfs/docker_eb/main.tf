@@ -237,19 +237,18 @@ data "aws_route53_zone" "primary" {
   depends_on = [ "aws_elastic_beanstalk_environment.ng_beanstalk_application_environment" ]
 }
 
-# resource "aws_route53_record" "www" {
-#   zone_id = "${aws_route53_zone.primary.zone_id}"
-#   name    = "www.${var.site}"
-#   type    = "A"
+resource "aws_route53_record" "www" {
+  zone_id = "${aws_route53_zone.primary.zone_id}"
+  name    = "www.${var.site}"
+  type    = "A"
 
-#   alias {
-#     name                   = "${aws_elastic_beanstalk_environment.ng_beanstalk_application_environment.dns_name}"
-#     zone_id                = "${aws_elastic_beanstalk_environment.ng_beanstalk_application_environment.zone_id}"
-#     evaluate_target_health = true
-#   }
+  alias {
+    name                   = "${aws_elastic_beanstalk_environment.ng_beanstalk_application_environment.dns_name}"
+    zone_id                = "${aws_elastic_beanstalk_environment.ng_beanstalk_application_environment.zone_id}"
+    evaluate_target_health = true
+  }
   
-#   depends_on = [ "aws_route53_zone.primary" ]
-# }
+}
 
 # resource "aws_route53_record" "none_www" {
 #   zone_id = "${aws_route53_zone.primary.zone_id}"
