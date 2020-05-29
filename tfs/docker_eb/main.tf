@@ -139,7 +139,7 @@ resource "aws_elastic_beanstalk_environment" "ng_beanstalk_application_environme
   
   setting {
     namespace = "aws:elasticbeanstalk:application:environment"
-    name      = "RDS_USER"
+    name      = "RDS_PASS"
 
     value = "${var.rds_password}"
   }
