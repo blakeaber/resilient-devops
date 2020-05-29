@@ -239,7 +239,7 @@ data "aws_lb" "alb" {
 data "aws_route53_zone" "primary" {
   name         = "${var.site}"
   
-  depends_on = [ "aws_elastic_beanstalk_environment.ng_beanstalk_application_environment" ]
+  # depends_on = [ "aws_elastic_beanstalk_environment.ng_beanstalk_application_environment" ]
 }
 
 resource "aws_route53_record" "www" {
