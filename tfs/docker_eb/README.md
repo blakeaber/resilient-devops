@@ -28,7 +28,7 @@ If you don't have your AWS credentials set as ENV variables:
  - ```clean.sh``` - script for cleaning temporary files
 
 ### Setup
-1. In the variables.tf file, set configs variable with default atribute to your liking! Leave the ones without the default attribute as is, for it is intended that way by design
+1. Use the terraform.tfvars for fill in information that is needed for variables.tf file. Do not edit variables.tf file. terraform.tfvars will stay local and in action of a git push no update on it should be made. Otherwise a risk for exposing credentials
 2. Run ```terraform init```
 3. Run ```terraform plan -out plan.tfplan```
   - Fill out Name, Description & environment
@@ -53,6 +53,13 @@ For example:
 Now let us Deploy...
 ```
 ./deploy.sh my-app-name staging us-east-1 $(git show -s --format=%H)
+```
+
+### Common Errors
+Docker may fail to login to ecr depending on the machine and aws cli version in use. Usually because of docker login. If so please try this locally and try again. This will force docker to login to aws ecr for you. Then re-rin deploy.sh
+```
+$ $(aws ecr get-login --profile default | awk '{ print "sudo", $1, $2, $3, $4, $5, $6, $9}')
+
 ```
 
 ### Automatic deployment
