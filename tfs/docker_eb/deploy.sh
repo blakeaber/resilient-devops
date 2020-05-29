@@ -88,12 +88,13 @@ docker pull $IMAGE
 # # Push to AWS Elastic Container Registry
 # docker push $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$NAME:$VERSION
 
-# Build the image
-docker build -t $NAME-$VERSION .
+docker build -t $NAME .
 # Tag it
-docker tag $NAME-$VERSION:latest $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$NAME:latest 
+docker tag $NAME $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$NAME:$VERSION
 # Push to AWS Elastic Container Registry
-docker push $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$NAME:latest
+docker push $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$NAME:$VERSION
+
+
 
 # Replace the <AWS_ACCOUNT_ID> with your ID
 sed -i='' "s/<AWS_ACCOUNT_ID>/$AWS_ACCOUNT_ID/" Dockerrun.aws.json
