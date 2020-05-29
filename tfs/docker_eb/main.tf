@@ -233,6 +233,8 @@ resource "aws_elastic_beanstalk_environment" "ng_beanstalk_application_environme
 # Route 53 configuration
 data "aws_route53_zone" "primary" {
   name         = "${var.site}"
+  
+  depends_on = [aws_elastic_beanstalk_environment.ng_beanstalk_application_environment]
 }
 
 resource "aws_route53_record" "www" {
@@ -245,6 +247,8 @@ resource "aws_route53_record" "www" {
     zone_id                = "${aws_elastic_beanstalk_environment.ng_beanstalk_application_environment.zone_id}"
     evaluate_target_health = true
   }
+  
+  depends_on = [aws_route53_zone.primary]
 }
 
 resource "aws_route53_record" "none_www" {
@@ -257,4 +261,6 @@ resource "aws_route53_record" "none_www" {
     zone_id                = "${aws_elastic_beanstalk_environment.ng_beanstalk_application_environment.zone_id}"
     evaluate_target_health = true
   }
+  
+  depends_on = [aws_route53_zone.primary]
 }
