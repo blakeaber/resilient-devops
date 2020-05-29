@@ -238,7 +238,7 @@ resource "aws_elastic_beanstalk_environment" "ng_beanstalk_application_environme
 
 # Route 53 configuration
 data "aws_lb" "alb" {
-  arn  = "${aws_elastic_beanstalk_environment.ng_beanstalk_application_environment.load_balancers}"
+  arn  = "${element(aws_elastic_beanstalk_environment.ng_beanstalk_application_environment.load_balancers,0)}"
   
 }
 
