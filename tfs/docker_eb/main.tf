@@ -1,3 +1,9 @@
+terraform {
+  required_providers {
+    aws = "~> 2.64"
+  }
+}
+
 # Configure AWS Credentials & Region
 provider "aws" {
   profile = "${var.profile}"
