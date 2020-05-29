@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "<ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/<NAME>:<VERSION>",
+    "Name": "<ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/<NAME>:latest",
     "Update": "true"
   },
   "Ports": [
