@@ -158,6 +158,27 @@ resource "aws_elastic_beanstalk_environment" "ng_beanstalk_application_environme
     value = "LoadBalanced"
   }
   
+  setting {
+    namespace = "aws:elbv2:listener:443"
+    name      = "ListenerEnabled"
+
+    value = "true"
+  }
+  
+  setting {
+    namespace = "aws:elbv2:listener:default"
+    name      = "ListenerEnabled"
+
+    value = "true"
+  }
+  
+  setting {
+    namespace = "aws:elasticbeanstalk:environment"
+    name      = "LoadBalancerType"
+
+    value = "application"
+  }
+  
 }
 
 # Create a new application load balancer
