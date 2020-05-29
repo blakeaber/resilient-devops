@@ -90,7 +90,7 @@ docker pull $IMAGE
 
 docker build -t $NAME .
 # Tag it
-docker tag $NAME $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$NAME:latest
+docker tag $NAME:latest $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$NAME:latest
 # Push to AWS Elastic Container Registry
 docker push $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$NAME:latest
 
