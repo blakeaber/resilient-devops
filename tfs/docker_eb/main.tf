@@ -214,6 +214,13 @@ resource "aws_elastic_beanstalk_environment" "ng_beanstalk_application_environme
     value = "nginx"
   }
   
+  setting {
+    namespace = "aws:elasticbeanstalk:control"
+    name      = "RollbackLaunchOnFailure"
+
+    value = "true"
+  }
+  
 }
 
 # Create a new application load balancer
