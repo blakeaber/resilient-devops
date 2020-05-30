@@ -22,7 +22,7 @@ If you don't have your AWS credentials set as ENV variables:
 
 ### Contents of repo
  - ```Dockerrun.aws.json``` - AWS Beanstalk standard task definition. Tells Beanstalk which image from ECR it should use
- - ```deploy.sh``` - script for deploying applications. App must be first set up
+ - ```deploy.sh``` - script for deploying applications. Can not run this before terrafrom apply
  - ```Dockerfile``` - You will use to build your image, please change this to your need (make sure the FROM part is always the first line of the script)
  - ```*.tf``` files - Terraform infrastructure definition written in HCL (HashiCorp Configuration Language)
  - ```clean.sh``` - script for cleaning temporary files
