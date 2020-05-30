@@ -224,7 +224,7 @@ resource "aws_elastic_beanstalk_environment" "ng_beanstalk_application_environme
     namespace = "aws:elasticbeanstalk:control"
     name      = "RollbackLaunchOnFailure"
 
-    value = true
+    value = "true"
   }
   
   setting {
