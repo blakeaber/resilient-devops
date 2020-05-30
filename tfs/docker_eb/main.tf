@@ -221,13 +221,6 @@ resource "aws_elastic_beanstalk_environment" "ng_beanstalk_application_environme
   }
   
   setting {
-    namespace = "aws:elasticbeanstalk:control"
-    name      = "RollbackLaunchOnFailure"
-
-    value = "true"
-  }
-  
-  setting {
     namespace = "aws:elbv2:listener:443"
     name      = "SSLCertificateArns"
 
