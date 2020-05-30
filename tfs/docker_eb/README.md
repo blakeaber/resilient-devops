@@ -31,12 +31,12 @@ If you don't have your AWS credentials set as ENV variables:
 1. Use the terraform.tfvars for fill in information that is needed for variables.tf file. Do not edit variables.tf file. terraform.tfvars will stay local and in action of a git push no update on it should be made. Otherwise a risk for exposing credentials
 2. Run ```terraform init```
 
-NOTE: If you have the A records of your site: i.e. `www.example.com` or example.com. Get the follwoign from Route53
-- ZONEID
-- RECORDNAME i.e `example.com` or `www.example.com`
-- TYPE i.e in this case if A
-- SET-IDENTIFIER is optional
-Command a. below is for `www.example.com`
+\tNOTE: If you have the A records of your site: i.e. `www.example.com` or example.com. Get the follwoign from Route53
+\t- ZONEID
+\t- RECORDNAME i.e `example.com` or `www.example.com`
+\t- TYPE i.e in this case if A
+\t- SET-IDENTIFIER is optional
+\tCommand a. below is for `www.example.com`
 Command b. below is for `example.com`
 Run the following before proceeding
 a. ```terraform import aws_route53_record.www ZONEID_RECORDNAME_TYPE_SET-IDENTIFIER```
